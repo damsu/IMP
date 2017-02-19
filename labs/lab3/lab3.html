@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lab 3</title>
+		<script src="lab3.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onload="displayList();">
+		<h1>Lab 3</h1>
+
+		<h2>1. Web Sockets</h2>
+		<div id="chatRoom"></div>
+		<input type="text" id="chatInput" name="chat"><br>
+		<button id="sendButt" onclick="sendMessage();">Send</button>
+		<h2>2. Local Storage</h2>
+		<div id="dynamic">
+			<p>Add someone
+				<input type="text" id="fPerson" value=""></input>
+				<button onclick="addPerson();">Add</button>
+				<button onclick="resetStorage();">DELETE STORAGE</button>
+			</p>
+			<h3>Persons</h3>
+			<p id="personList"></p>
+		</div>
+		<h2>3. Audio Element</h2>
+		<div id="audioPlayer">
+		<button id="playButt" class="audioButt" onclick="playAudio();">Play</button>
+		<button id="stopButt" class="audioButt" onclick="stopAudio();">Stop</button>
+		<input id="volumeSlider" type="range" value="1" step="0.01"  min="0" max="1" onchange="setVolume(this.value)" />
+		</div>
+		<h2>4. Video element</h2>
+		<video playsinline autoplay muted loop id="bgvid">
+			<source src="https://pixabay.com/en/videos/download/video-2267_1080p.mp4" type="video/mp4">
+		</video>
+	</body>
+</html>

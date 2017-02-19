@@ -1,0 +1,63 @@
+h1, h2, h3{
+	color: gold;
+}
+
+p{
+	margin-left: 30px;
+	color: white;
+}
+
+body{
+	background-color: black;
+}
+
+#chatRoom {
+	width:95%;
+	height:400px;
+	background-color:rgba(0, 0, 0, 0.5);;
+	color:white;
+	overflow:scroll;
+}
+
+#sendButt {
+	width:95%;
+	height:30px;
+	background-color:grey;
+}
+
+#chatInput {
+	width:95%;
+	height:30px;
+}
+
+#audioPlayer {
+	padding-left:1%;
+	width:30%;
+	height:100px;
+}
+
+.audioButt {
+	width:48%;
+	height:50px;
+}
+
+#volumeSlider {
+	width:96%;
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lab 1</title>
+		<script src="lab1.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onload="displayList();">
+	
+		<h1>Lab 1</h1>
+		
+		<h2>1. Definitions
+		<button onclick="toggleShowDiv('definitions');">Show/Hide</button></h2>
+		<div id="definitions">
+			<p><b>a. HTML</b></p>
+			<p>Descriptive language made up of markup symbols or tags used to describe the visual structure of a webpage.</p>
+			<p><b>b. CSS</b></p>
+			<p>Stylesheet containing descriptions of the looks (style attributes) of specific elements used in html page.</p>
+			<p><b>c. Javascript</b></p>
+			<p>High-level programming language used to make webpages dynamic by programming the behaviour of elements within
+			the page after page load.</p>
+			<p><b>d. HTTP</b></p>
+			<p>text-based communication protocol used to load web content. HTTP is used everytime a request is made to load 
+			or send data from/to an online webpage. Most common requests are POST (send data), GET (get data), DELETE (delete data) and PUT(update data)</p>
+			<p><b>e. HTML5</b></p>
+			<p>Latest version of HTML. Improves from previous version by ableing the easy use and display of elements such as
+			canvas, videos and audio. It also adds a local storage possibility to webpages. Furthermore adds more tags and elements to previous HTML versions.</p>
+			<p><b>f. Dynamic HTML(DHTML)</b></p>
+			<p>Combination of tags and options that allow webpages to react to user input without reloading the page 
+			(such as simple mouse-over highlighting).</p>
+		</div>
+		
+		<h2>2. Coding conventions
+		<button onclick="toggleShowDiv('conventions');">Show/Hide</button></h2>
+		<div id="conventions">
+			<p>Coding conventions are mostly ways of writing code that are not compulsory but are strongly advised for different reasons :<br>
+				- Readability of the code by others. (Proper indentation, closing optionnal tags, order of attributes in tags/elements,
+				naming of variables/functions, etc...)<br>
+				- Compatibility accross platforms. (Charset used, IE compatibility, etc...)<br>
+				- Performance of the webpage. (Reduce unnecessary tags, programmatical loops, etc...)
+			</p>
+			<p>I will try to use all conventions for coding, but since there are a lot of them and I am not familiar with all, I will especially 
+			focus on proper indentation, naming of variables and functions as well as efficiency of the code (so no dirty coding...).</p>
+		</div>
+		
+		<h2>5. Dynamic HTML
+		<button onclick="toggleShowDiv('dynamic');">Show/Hide</button></h2>
+		<div id="dynamic">
+			<p>Add someone
+				<input type="text" id="fPerson" value=""></input>
+				<button onclick="addPerson();">Add</button>
+			</p>
+			<h3>Persons</h3>
+			<p id="personList"></p>
+		</div>
+	</body>
+</html>

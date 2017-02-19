@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lab 6</title>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+		<script src="lab6.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>Lab 6</h1>
+			<h2>1. Flickr photo wall</h2>
+				<div id="input" class="input-group col-lg-4 col-lg-offset-4">
+					<input type="text" id="search" class="form-control"></input>
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-success" id="searchBtn" onclick="getImagesByTag();">Show</button>
+					</span>
+				</div>
+				<div id="images">
+				</div>
+			</div>
+	</body>
+</html>
