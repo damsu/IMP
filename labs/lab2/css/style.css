@@ -65,6 +65,12 @@ figure figcaption {
 @media only screen
   and (min-device-width: 550px) {
 
+		h3 {
+			text-align: left;
+		}
+		p{
+			text-align: left;
+		}
 		#menu {
 			float:left;
 			width:20%;
@@ -76,9 +82,13 @@ figure figcaption {
 			height:100%;
 		}
 		#personList {
+			text-align: left;
 			background-color: grey;
 			width:30%;
 			max-width: 100px;
+		}
+		#addButt{
+			text-align: left;
 		}
 }
 
