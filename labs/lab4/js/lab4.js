@@ -16,7 +16,7 @@ function loadFirstCanvas() {
 	var second_x;
 	var second_y;
 	var mouseDown = false;
-	
+
 	function getMousePos(canvas, evt) {
         var rect = canvas.getBoundingClientRect();
         return {
@@ -24,14 +24,14 @@ function loadFirstCanvas() {
           y: evt.clientY - rect.top
         };
     }
-	
+
 	tempCanvas.addEventListener('mousedown', function(evt) {
 		mouseDown = true;
 		var mousePos = getMousePos(tempCanvas, evt);
 		first_x = mousePos.x;
 		first_y = mousePos.y;
 	}, false);
-	
+
 	tempCanvas.addEventListener('mouseup', function(evt) {
 		mouseDown = false;
 		tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
@@ -49,7 +49,7 @@ function loadFirstCanvas() {
 			second_y = mousePos.y;
 			drawLine(tempCanvas, second_x, second_y, first_x, first_y);
 		}
-	}, false);	
+	}, false);
 }
 
 function loadSecondCanvas() {
@@ -60,7 +60,7 @@ function loadSecondCanvas() {
 	var previous_x;
 	var previous_y;
 	var mouseDown = false;
-	
+
 	function getMousePos(canvas, evt) {
         var rect = canvas.getBoundingClientRect();
         return {
@@ -68,13 +68,13 @@ function loadSecondCanvas() {
           y: evt.clientY - rect.top
         };
     }
-	
+
 	canvas.addEventListener('mousedown', function(evt) {
 		mouseDown = true;
 		var mousePos = getMousePos(canvas, evt);
 		drawLine(canvas, mousePos.x, mousePos.y, mousePos.x, mousePos.y)
 	}, false);
-	
+
 	canvas.addEventListener('mouseup', function(evt) {
 		mouseDown = false;
 	}, false);
@@ -93,7 +93,7 @@ function loadSecondCanvas() {
 			previous_x = null;
 			previous_y = null;
 		}
-	}, false);	
+	}, false);
 }
 
 function loadGameCanvas(){
@@ -106,11 +106,10 @@ function loadGameCanvas(){
 	var score=0;
 	var playing=true;
 	var waitingForAction=false;
-	var playButton = document.getElementById('playButt');
 	var time = 0;
 	var scoreText = document.getElementById('score');
 	var timeText = document.getElementById('time');
-	
+
 	function getMousePos(canvas, evt) {
         var rect = canvas.getBoundingClientRect();
         return {
@@ -118,7 +117,7 @@ function loadGameCanvas(){
           y: evt.clientY - rect.top
         };
     }
-	
+
 	function newTarget(){
 		var target = drawRandomRect();
 		if (playing){
@@ -126,7 +125,7 @@ function loadGameCanvas(){
 				var mousePos = getMousePos(canvas, evt);
 				if ((mousePos.x >= target.x) && (mousePos.x <= (target.x + rectWidth)) && (mousePos.y >= target.y) && (mousePos.y <= (target.y + rectHeight))) {
 					score++;
-					scoreText.innerHTML = score;
+					scoreText.innerHTML = "SCORE : " + score + " --- ";
 					newTarget();
 				}
 			}, false);
@@ -135,30 +134,37 @@ function loadGameCanvas(){
 			context.clearRect(0,0,canvas.width,canvas.height);
 		}
 	}
-	
-	playButton.onclick = function startPlaying(){
-		score = 0;
-		scoreText.innerHTML = score;
-		time = 5;
-		timeText.innerHTML = time;
-		playing = true;
-		newTarget();
-		setTimeout(function(){ removeSecond() }, 1000);
-		setTimeout(function(){ removeSecond() }, 2000);
-		setTimeout(function(){ removeSecond() }, 3000);
-		setTimeout(function(){ removeSecond() }, 4000);
-		setTimeout(function(){ removeSecond() }, 5000);
+
+	canvas.onclick = function clickToStart(){
+		if(time==0){
+			setTimeout(function(){ startPlaying() }, 1000);
+		}
 	}
-	
+
+	function startPlaying(){
+				score = 0;
+				scoreText.innerHTML = "SCORE : " + score + " --- ";
+				time = 5;
+				timeText.innerHTML = "TIME : " + time + " seconds left";
+				playing = true;
+				newTarget();
+				setTimeout(function(){ removeSecond() }, 1000);
+				setTimeout(function(){ removeSecond() }, 2000);
+				setTimeout(function(){ removeSecond() }, 3000);
+				setTimeout(function(){ removeSecond() }, 4000);
+				setTimeout(function(){ removeSecond() }, 5000);
+	}
+
 	function removeSecond(){
 		time--;
-		timeText.innerHTML = time;
+		timeText.innerHTML ="TIME : " + time + " seconds left";
 		if (time == 0){
 			playing = false;
+			timeText.innerHTML = "GAME OVER"
 			newTarget();
 		}
 	}
-	
+
 	function drawRandomRect(){
 		var rectx = (Math.random() * (canvas.width - rectWidth));
 		var recty = (Math.random() * (canvas.height - rectHeight));
@@ -183,4 +189,3 @@ function drawLine(canvas, x, y, previous_x, previous_y) {
 	context.lineWidth = 1;
 	context.stroke();
 }
-

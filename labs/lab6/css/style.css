@@ -1,0 +1,16 @@
+#images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#images img{
+	width:20em;
+	height: 20em;
+	object-fit: cover;
+	margin: 0.5em;
+}
+
+#input{
+	margin-bottom: 2em;
+}
